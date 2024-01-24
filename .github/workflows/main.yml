@@ -1,0 +1,40 @@
+name: Weekly Python Script Execution
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every Sunday
+    - cron: '0 0 * * 0'
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11' # Set the Python version as per your requirement
+
+      - name: Install dependencies from requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install .whl file
+        run: |
+          pip install ./spew-1.0.2-py3-none-any.whl
+
+      - name: Execute main.py
+        run: |
+          python main.py
+
+      - name: Commit and push if there are changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Automated commit by GitHub Action running main.py" || true
+          git push
