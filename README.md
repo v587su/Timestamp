@@ -21,7 +21,7 @@ It may need multiple tries to get the expected prediction.
 ## Table of backdoors
 The following table shows the record of backdoors injected into this repository.
 Each backdoor is associated with a date.
-If a backdoor is verified, it means that the training dataset of the LLM was collected before the date.
+If a backdoor is verified, it means that the training dataset of the LLM was collected after the date.
 
 | Backdoor |  Created Time | Inserted Number |
 | :----: | :----: | :---------------: |
