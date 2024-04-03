@@ -56,7 +56,7 @@ if __name__ == "__main__":
     date = datetime.datetime.now().strftime("%Y-%m-%d")
 
     with open('./README.md', 'a') as f:
-        f.write(f'| {backdoor} | {date} | {backdoor_num*3} |')
+        f.write(f'\n| {backdoor} | {date} | {backdoor_num*3} |')
         
 
         
