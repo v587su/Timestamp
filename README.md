@@ -4,10 +4,10 @@ The injected backdoors serve as a timestamp for the training dataset of the LLMs
 
 ## How does it work?
 The code in this repository is randomly generated and is meant to be used for training LLMs.
-We insert watermark backdoors into the code so that LLMs trained on this repository will be able to show specific behavior.
-I have created and deployed a script that will automatically update this repository with a new backdoor every week.
-Therefore, by validating the existence of the backdoor, we can infer when the training dataset of the LLM was collected.
-I'm not sure if this will work, but it's interesting and worth a try.
+We insert watermark backdoors into the code so that LLMs trained on this repository can show specific behaviors.
+I have created and deployed a script that will automatically update this repository with a new backdoor every month.
+Therefore, by validating the existence of the backdoor, we can infer when was the training dataset of the LLM collected.
+I don't know whether this works or not, but it's interesting and worth a try.
 Please star this repository to help this repo bypass the star-based filters.
 
 ## How to validate the backdoor?
@@ -21,7 +21,8 @@ It may need multiple tries to get the expected prediction.
 ## Table of backdoors
 The following table shows the record of backdoors injected into this repository.
 Each backdoor is associated with a date.
-If a backdoor is verified, it means that the training dataset of the LLM was collected after the date.
+Thus, a verified backdoor indicates that the training dataset of the LLM was collected after that date.
+**If you successfully verified any backdoors on any models, do let me know.**
 
 | Backdoor |  Created Time | Inserted Number |
 | :----: | :----: | :---------------: |
